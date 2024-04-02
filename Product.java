@@ -4,7 +4,7 @@ class Product{
 public static void main(String[] args){
 HashMap<String,Integer> mynum = new HashMap<String,Integer>();
 mynum.put("chary",56);
-mynum.put("sony",33);
+mynum.put("chinaa",33);
 mynum.put("mahesh",33);
 mynum.put("karthik",33);
 mynum.put("youngi",44);
