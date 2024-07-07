@@ -1,0 +1,128 @@
+package inner;
+
+public class A {
+   public int a = 10;
+  public static int x = 12;
+   int y = 40;
+   public void ano()
+   {
+	   System.out.println("china kadu anonymous ");
+   }
+   public void local()
+   {
+	   //local inner class
+	   class L{
+		   public void l1()
+		   {
+			   System.out.println("local local local.........");
+			   
+		   }
+		   public void l2()
+		   {
+			   System.out.println(x + "The valuse of x local");
+			   System.out.println(y + "The valus in local staic ");
+			   
+			   
+		   }
+		   
+	   }
+	   L local = new L();
+	   local.l1();
+	   local.l2();
+   }
+   public int m3()
+   {
+	   return a;
+   }
+   //inner class
+   class Inner{
+	   public static void m1(int a)
+	   {
+		   System.out.println("value of a in m1 method " + a);
+	   }
+	   public void m2(int k)
+	   {
+		   System.out.println("The value of the m2 method " + k);
+	   }
+	   public void testin()
+	   
+	   {
+		   System.out.println("The value of x in instance class " + y);
+		   System.out.println("The valus of y in instance class " + x);
+	   }
+   }
+   //static inner class
+    static class Inner1{
+    	int a1 = 10;
+    	static int b1 = 11;
+    	
+    	public static void m4(int b)
+    	{
+    		System.out.println("The value of b staic method = " + b);
+    	}
+    	public int m5()
+    	{
+    		 return a1;
+    		// return b1;
+    	}
+    	public void test()
+    	{
+    		System.out.println("The value of x in staic class " + x);
+    		//System.out.println("The valus of y in staic class " + y);
+    	}
+    	
+	   
+   }
+
+}
+package inner;
+import java.util.*;
+import inner.*;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		//anonymous class;
+		A ob = new A() {
+			  public void ano()
+			  {
+				  System.out.println("chinna kadu main class ki vachadu && anonymous");
+			  }
+			  public void an1()
+			  {
+				  System.out.println("maheh is an good boy");
+			  }
+		};
+		ob.ano();
+	//	ob.an1();
+		ob.local();
+        
+		int a =  4;
+		System.out.println(ob.m3() + " outer class ");
+		A.Inner ob1 = ob . new Inner();
+		ob1.m1(10);
+		ob1.m2( 122);
+		ob1.testin();
+		 
+		A.Inner1 ob2 = new A.Inner1();
+		
+		
+		ob2.m4(22);
+		ob2.test();
+		System.out.println("The va;ie static inner class = " + ob2.m5());
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
